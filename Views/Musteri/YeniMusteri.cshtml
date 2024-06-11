@@ -1,0 +1,30 @@
+﻿@model MVCStokProject.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Müşteri Ad:</label>
+        @Html.TextBoxFor(m => m.musteriAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.musteriAd, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        <label>Müşteri Soyad:</label>
+        @Html.TextBoxFor(m => m.musteriSoyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.musteriSoyad, "", new { @class = "text-danger" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn-info" id="btn1">Yeni Müşteri Ekle</button>
+    </div>
+    <script>
+        $('#btn1').click(function () {
+            alert('Müşteri Eklendi');
+        });
+    </script>
+
+</form>
+
+
+

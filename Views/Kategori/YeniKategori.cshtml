@@ -1,0 +1,29 @@
+﻿@model MVCStokProject.Models.Entity.TBLKATEGRORILER
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@*form butona tıklandığında yani post edildiğinde çalışacak controller sınıfında da httppst olarak tanımladığımız için o metod çalışmış olacak*@
+@*input etiketindeki name kısmı veri tabanındaki alan adıyla AYNI OLMALI !!! *@
+<form class="form-group" method="post">
+    <div>
+        <label>Kategori Adı:</label>
+        @Html.TextBoxFor(m => m.kategoriAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.kategoriAd, "", new { @class = "text-danger" })
+        @*Bu örnekte, kategoriAd alanı için modelde(TBLKATEGORILER'de) tanımlanan hata mesajı kullanılacak 
+            ve bu mesaj CSS sınıfı text-danger ile stilize edilecektir.*@
+
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Kategori Ekle</button>
+    </div>
+
+    @* <div>
+            <label>Kategori Adı:</label>
+            <input type="text" class="form-control" name="kategoriAd"/>
+        </div>
+    *@
+
+</form>
+

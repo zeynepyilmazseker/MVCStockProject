@@ -1,0 +1,41 @@
+﻿@model MVCStokProject.Models.Entity.TBLSATISLAR
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Satış Yap</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Satış Yapma Ekranı</h2>
+            </div>
+            <form method="post" action="/Satis/YeniSatis">
+                <div class="modal-body">
+
+                    @Html.LabelFor(s => s.satisid, "satış id:")
+
+                    <br />
+                    @Html.LabelFor(u => u.urunid, "ürün id")
+                    @Html.TextBoxFor(u => u.urunid, new { @class = "form-control" })
+
+                    <br />
+                    @Html.LabelFor(u => u.musteriid, "müşteri id")
+                    @Html.TextBoxFor(u => u.musteriid, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(u => u.adet, "satış adeti")
+                    @Html.TextBoxFor(u => u.adet, new { @class = "form-control" })
+                    <br />
+                    @Html.LabelFor(u => u.satisFiyati, "satış fiyatı")
+                    @Html.TextBoxFor(u => u.satisFiyati, new { @class = "form-control" })
+                    <br />
+                    <button type="submit" class="btn btn-info">Satış İşlemini Yap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

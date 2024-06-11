@@ -1,0 +1,26 @@
+﻿@model MVCStokProject.Models.Entity.TBLKATEGRORILER
+
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*HTML.beginform(form post edildiğinde Kategori controller içindeki Guncelle çalışacak.)*@
+
+@using (Html.BeginForm("Guncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.kategoriid, "Kategori ID:")
+        @Html.TextBoxFor(m => m.kategoriid, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.kategoriAd, "Kategori Adı:")
+        @Html.TextBoxFor(m => m.kategoriAd, new { @class = "form-control" })
+        
+
+    </div>
+    <div>
+        <button class="btn btn-success">Kategori Güncelle</button>
+    </div>
+}
+

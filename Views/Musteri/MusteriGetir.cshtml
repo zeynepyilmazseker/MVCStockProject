@@ -1,0 +1,27 @@
+﻿@model MVCStokProject.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Müşteri Düzenleme Sayfası</h2>
+@using (Html.BeginForm("MusteriDuzenle", "Musteri", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.musteriid, "Müşteri ID:")
+        @Html.TextBoxFor(m => m.musteriid, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.musteriAd, "Müşteri Adı:")
+        @Html.TextBoxFor(m => m.musteriAd, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.musteriSoyad, "Müşteri Soyad")
+        @Html.TextBoxFor(m => m.musteriSoyad, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-warning">Müşteri Güncelle</button>
+}
+

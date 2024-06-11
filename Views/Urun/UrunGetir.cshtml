@@ -1,0 +1,46 @@
+﻿@model MVCStokProject.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Ürün Düzenleme Sayfası</h2>
+@using (Html.BeginForm("UrunDuzenle", "Urun", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.urunid, "urun id:")
+        @Html.TextBoxFor(m => m.urunid, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.urunAd, "Ürün Adı:")
+        @Html.TextBoxFor(m => m.urunAd, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.urunMarka, "Ürün Markası:")
+        @Html.TextBoxFor(m => m.urunMarka, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.urunKategori, "Ürün Kategorisi:")
+        @Html.DropDownListFor(m => m.TBLKATEGRORILER.kategoriid, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.urunFiyat, "Ürün Fİyatı:")
+        @Html.TextBoxFor(m => m.urunFiyat, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(m => m.Stok, "Ürün Stok Adeti:")
+        @Html.TextBoxFor(m => m.Stok, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-warning">Ürünü Güncelle</button>
+    </div>
+
+
+}
+
